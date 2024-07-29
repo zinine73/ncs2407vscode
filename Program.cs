@@ -12,6 +12,7 @@ internal class Program
         int answer = Solution0726(90);
         Console.WriteLine(answer);
         //MakeLotto();
+        //test from fakezinine
     }
 
     static int Solution0726(int angle)
