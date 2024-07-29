@@ -3,8 +3,6 @@ using Myevan;
 
 internal class Program
 {
-    //햣
-    // test
     private static void Main(string[] args)
     {
         int[] num_list = new int[]{1,2,7,10,11};
@@ -14,7 +12,6 @@ internal class Program
         int answer = Solution0726(90);
         Console.WriteLine(answer);
         //MakeLotto();
-        // 이거 카피하세요
     }
 
     static int Solution0726(int angle)
