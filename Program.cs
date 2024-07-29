@@ -3,6 +3,7 @@ using Myevan;
 
 internal class Program
 {
+    // test
     private static void Main(string[] args)
     {
         int[] num_list = new int[]{1,2,7,10,11};
