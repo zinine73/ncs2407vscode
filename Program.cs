@@ -7,14 +7,28 @@ internal class Program
     {
         int[] num_list = new int[]{1,2,7,10,11};
         int[] inv2 = new int[]{89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99};
-        int num1 = 15, num2 = 99;
-        var strl = new string[]{"I", "Love", "Programmers."};
-        int answer = Solution0726(90);
+        //int num1 = 15, num2 = 99;
+        //var strl = new string[]{"I", "Love", "Programmers."};
+        int answer = Solution0729(4);
         Console.WriteLine(answer);
         //MakeLotto();
-        //test from fakezinine
     }
 
+    public static int Solution0729(int n)
+    {
+        int answer = 0;
+        // 0부터 n(포함)까지 반복
+        for (int i = 1; i <= n; i++)
+        {
+            // 짝수인가? n % 2 == 0
+            if (i % 2 == 0)
+            {
+                // 짝수면 어딘가 더해
+                answer += i;
+            }
+        }
+        return answer;
+    }
     static int Solution0726(int angle)
     {
         int answer = 0;
