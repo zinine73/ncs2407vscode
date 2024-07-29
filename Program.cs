@@ -3,8 +3,6 @@ using Myevan;
 
 internal class Program
 {
-
-    // miss....
     // test
     private static void Main(string[] args)
     {
