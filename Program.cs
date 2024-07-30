@@ -9,9 +9,16 @@ internal class Program
         int[] inv2 = new int[]{89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        int answer = Solution0729(4);
-        Console.WriteLine(answer);
+        int answer = int.MaxValue;//Solution0729(4);
+        int a2 = int.MinValue;
+        Console.WriteLine($"max : {answer}, min : {a2}");
         //MakeLotto();
+    }
+
+    private static void CSharpStudy()
+    {
+        // value타입 데이터형에 ?를 붙여서 null 값도 가능하게 만든다
+        int? i = null; // i가 null 값을 가질 수 있다
     }
 
     public static int Solution0729(int n)
