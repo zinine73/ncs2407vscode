@@ -13,9 +13,8 @@ internal class Program
         int a2 = int.MinValue;
         Console.WriteLine($"max : {answer}, min : {a2}");
         //MakeLotto();
-
-
-        // 
+	// 내 흔적...zinine
+    // 뭐야 이게
     }
 
     private static void CSharpStudy()
