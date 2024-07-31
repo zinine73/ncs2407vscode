@@ -14,7 +14,7 @@ internal class Program
         Console.WriteLine($"max : {answer}, min : {a2}");
         //MakeLotto();
         // 아 고기먹고 싶다 ... 손민준
-        // 로다주 출연료 1100억,, 
+        // 로다주 출연료 1100억,, -ㅎㄹ
         // 철권하고 싶다... by zinine
         // 라라라라 - by 전지연
         // 정리
