@@ -12,16 +12,6 @@ internal class Program
         int answer = int.MaxValue;//Solution0729(4);
         int a2 = int.MinValue;
         Console.WriteLine($"max : {answer}, min : {a2}");
-        //MakeLotto();
-        // 아 고기먹고 싶다 ... 손민준
-        // 로다주 출연료 1100억,, -ㅎㄹ
-        // 철권하고 싶다... by zinine
-        // 라라라라 - by 전지연
-        // 바쁘다 바뻐 - 혜지
-        // 정리
-	    // ㅋㅋㅋ
-        // 이제 진짜 정리
-        /////////////////////////////////////////////////////////
     }
 
     private static void CSharpStudy()
