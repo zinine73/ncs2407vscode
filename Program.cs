@@ -3,21 +3,62 @@ using Myevan;
 
 internal class Program
 {
+    int globalVar;
+    const int MAX_VALUE = 1024;
+
     private static void Main(string[] args)
     {
-        int[] num_list = new int[]{1,2,7,10,11};
+        int[] num_list = new int[]{1,3,5,7};
         int[] inv2 = new int[]{89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        int answer = int.MaxValue;//Solution0729(4);
-        int a2 = int.MinValue;
-        Console.WriteLine($"max : {answer}, min : {a2}");
+        int[] answer = Solution0731(num_list);
+        PrintIntArray(answer);
+    }
+
+    // 짝수 홀수 개수
+    private static int[] Solution0731(int[] num_list)
+    {
+        // 리턴할 배열의 크기가 2로 일정하므로 바로 크기를 잡아서 선언한다
+        int[] answer = new int[2];
+        // num_list의 크기만큼 반복한다
+        for (int i = 0; i < num_list.Length; i++)
+        {
+            // num_list에서 인덱스에 해당하는 값이
+            int pick = num_list[i];
+            if (pick % 2 == 0)
+            // 짝수면 리턴할 배열의 첫번째 공간에
+            {
+                answer[0] += 1;
+            }
+            // 홀수면 두번째 공간에 더해준다
+            else
+            {
+                answer[1] += 1;
+            }
+        }
+        // foreach 사용할 경우
+        /*
+        foreach (var item in num_list)
+        {
+            if (item % 2 == 0)
+            {
+                answer[0]++;
+            }
+            else
+            {
+                answer[1]++;
+            }
+        }
+        */
+        return answer;
     }
 
     private static void CSharpStudy()
     {
         // value타입 데이터형에 ?를 붙여서 null 값도 가능하게 만든다
         int? i = null; // i가 null 값을 가질 수 있다
+
     }
 
     public static int Solution0729(int n)
