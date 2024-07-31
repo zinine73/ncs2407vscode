@@ -15,6 +15,7 @@ internal class Program
         //MakeLotto();
 	// 내 흔적...zinine
     // 뭐야 이게
+        // from fake zinine
     }
 
     private static void CSharpStudy()
