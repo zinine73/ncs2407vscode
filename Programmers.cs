@@ -53,6 +53,8 @@ namespace Zinine
             */
             return answer;
         }
+
+        // 짝수의 합
         public static int Solution0729(int n)
         {
             int answer = 0;
@@ -68,6 +70,8 @@ namespace Zinine
             }
             return answer;
         }
+
+        // 각도기
         public static int Solution0726(int angle)
     {
         int answer = 0;
