@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using Myevan;
+using Zinine;
 
 internal class Program
 {
@@ -13,7 +14,7 @@ internal class Program
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
         int[] answer = Solution0731(num_list);
-        PrintIntArray(answer);
+        Utils.PrintIntArray(answer);
     }
 
     // 짝수 홀수 개수
@@ -132,7 +133,7 @@ internal class Program
         Array.Sort(lotto);
 
         //PrintIntArray(lotto2.ToArray());
-        PrintIntArray(lotto);
+        Utils.PrintIntArray(lotto);
     }
 
     // Integer배열에 주어진 값이 있는지 판단하는 함수
@@ -172,18 +173,6 @@ internal class Program
             ii--;
         }
         Console.WriteLine(ai);
-    }
-
-    // Integer 배열을 한줄에 출력해주는 함수
-    private static void PrintIntArray(int[] answer)
-    {    
-        for(int i = 0; i < answer.Length; i++)
-        {
-            Console.Write(answer[i]);
-            if (i != answer.Length - 1)
-                Console.Write(", ");
-        }
-        Console.WriteLine();
     }
 
     static int[] solution0725(string[] strlist)
