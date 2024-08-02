@@ -11,15 +11,10 @@ namespace Zinine
             // value타입 데이터형에 ?를 붙여서 null 값도 가능하게 만든다
             int? i = null; // i가 null 값을 가질 수 있다
 
+            // 문자열에서 특정 문자열 가져오는 것 > Substring(시작인덱스, 길이)
             string s3 = "C# Programming";
             string subs = s3.Substring(1, 5);
             Console.WriteLine($"SubString: {subs}");
-
-            for (int ii = 0; ii < s3.Length; ii++)
-            {
-                //Console.WriteLine("{0}: {1}", ii, s3[ii]);
-                Console.WriteLine($"{ii}: {s3[ii]}");
-            }
         }
 
         static void KoreanJosa()

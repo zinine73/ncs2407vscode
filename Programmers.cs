@@ -54,6 +54,26 @@ namespace Zinine
             return answer;
         }
 
+        // 짝수는 싫어요
+        public static int[] Solution0730(int n)
+        {
+            List<int> list = new List<int>();
+            //var list2 = new List<int>();
+
+            // 1부터 n(포함)까지 반복
+            for (int i = 1; i <= n; i++)
+            {
+                // 홀수냐?
+                if (i % 2 != 0)
+                {
+                    // 홀수면 List에 넣자
+                    list.Add(i);
+                }
+            }
+            // List를 int[] 형식으로 바꿔서 리턴하자
+            return list.ToArray();
+        }
+
         // 짝수의 합
         public static int Solution0729(int n)
         {
@@ -97,6 +117,7 @@ namespace Zinine
             return answer;
         }
 
+        // 배열 원소의 길이
         public static int[] Solution0725(string[] strlist)
         {
             int[] answer = new int[strlist.Length];
@@ -121,18 +142,7 @@ namespace Zinine
             return answer;
         }
 
-        public static int Solution0723(int[] array)
-        {
-            int answer = 0;
-            List<int> list = new List<int>(array);
-            list.Sort();
-            //list.Count 대신 array.Length를 사용해도 된다
-            int index = (list.Count - 1) / 2;
-            answer = list[index];
-            return answer;
-        }
-
-
+        // 피자 나눠먹기(1)
         public static int Solution07242(int n)
         {
             int answer = 0;
@@ -144,6 +154,7 @@ namespace Zinine
             return answer;
         }
 
+        // 숫자 비교하기
         public static int Solution0724(int num1, int num2)
         {
             int answer = 0;
@@ -163,8 +174,19 @@ namespace Zinine
             return answer;
         }
 
+        // 중앙값 구하기
+        public static int Solution0723(int[] array)
+        {
+            int answer = 0;
+            List<int> list = new List<int>(array);
+            list.Sort();
+            //list.Count 대신 array.Length를 사용해도 된다
+            int index = (list.Count - 1) / 2;
+            answer = list[index];
+            return answer;
+        }
 
-
+        // 중복된 숫자 갯수
         public static int Solution0722(int[] array, int n)
         {
             int answer = 0;
@@ -196,6 +218,7 @@ namespace Zinine
             return answer;
         }
 
+        // 문자 반복 출력하기
         public static string Solution0719(string my_string, int n)
         {
             string answer = "";
@@ -210,6 +233,36 @@ namespace Zinine
                     answer += item;
                 }
             }
+            return answer;
+        }
+
+        // 배열 뒤집기
+        public static int[] Solution0718(int[] num_list)
+        {
+            int[] answer = new int[num_list.Length];
+            for (int i = 0; i < num_list.Length; i++)
+            {
+                answer[num_list.Length - i - 1] = num_list[i];
+            }
+            return answer;
+        }
+
+        // 배열의 평균값
+        public static double Solution0717(int[] numbers)
+        {
+            double answer = 0;
+            for (var i = 0; i < numbers.Length; i++)
+            {
+                answer += numbers[i];
+            }
+            answer = answer / numbers.Length;
+            return answer;
+        }
+
+        // 문자열로 변환
+        public static string Solution0715(int n) {
+            string answer = "";
+            answer = n.ToString();
             return answer;
         }
     }
