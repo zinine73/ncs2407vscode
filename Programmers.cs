@@ -73,28 +73,144 @@ namespace Zinine
 
         // 각도기
         public static int Solution0726(int angle)
-    {
-        int answer = 0;
-        if (angle == 90)
         {
-            answer = 2;
-        }
-        else if (angle == 180)
-        {
-            answer = 4;
-        }
-        else if ((0<angle) && (angle<90))
-        {
-            answer = 1;
-        }   
-        else // 생략 가능한 if...복잡한 식을 여기에 
-        {
-            answer = 3;
+            int answer = 0;
+            if (angle == 90)
+            {
+                answer = 2;
+            }
+            else if (angle == 180)
+            {
+                answer = 4;
+            }
+            else if ((0 < angle) && (angle < 90))
+            {
+                answer = 1;
+            }
+            else // 생략 가능한 if...복잡한 식을 여기에 
+            {
+                answer = 3;
+            }
+
+            // ?: 로 풀어보자
+            answer = (angle == 90) ? 2 : (angle == 180) ? 4 : ((0 < angle) && (angle < 90)) ? 1 : 3;
+            return answer;
         }
 
-        // ?: 로 풀어보자
-        answer = (angle == 90) ? 2 : (angle == 180) ? 4 : ((0<angle) && (angle<90))? 1 : 3; 
-        return answer;
-    }
+        public static int[] Solution0725(string[] strlist)
+        {
+            int[] answer = new int[strlist.Length];
+
+            // 주어진 string배열의 크기만큼 반복한다
+            for (int i = 0; i < strlist.Length; i++)
+            {
+                //strlist중에 index i 에 해당하는 string의 길이를
+                string str = strlist[i];
+                int len = str.Length;
+                // answer 배열의 index의 위치에 넣는다
+                answer[i] = len;
+            }
+
+            // foreach를 사용한 방법
+            int val = 0;
+            foreach (var item in strlist)
+            {
+                answer[val] = item.Length;
+                val++;
+            }
+            return answer;
+        }
+
+        public static int Solution0723(int[] array)
+        {
+            int answer = 0;
+            List<int> list = new List<int>(array);
+            list.Sort();
+            //list.Count 대신 array.Length를 사용해도 된다
+            int index = (list.Count - 1) / 2;
+            answer = list[index];
+            return answer;
+        }
+
+
+        public static int Solution07242(int n)
+        {
+            int answer = 0;
+            // 나머지를 구하는 연산자는 %
+            int piz = n / 7;
+            int res = ((n % 7) == 0) ? 0 : 1;
+            answer = piz + res;
+
+            return answer;
+        }
+
+        public static int Solution0724(int num1, int num2)
+        {
+            int answer = 0;
+            // if ~ else 를 사용했을 때
+            if (num1 != num2)
+            {
+                answer = -1;
+            }
+            else// if (num1 != num2) <- 이부분 생략 가능
+            {
+                answer = 1;
+            }
+
+            // ?: (삼항연산자)를 사용했을 때
+            answer = (num1 != num2) ? -1 : 1;
+
+            return answer;
+        }
+
+
+
+        public static int Solution0722(int[] array, int n)
+        {
+            int answer = 0;
+
+            // for문 사용
+            // 배열의 크기만큼 반복한다
+            /*         for (int i = 0; i < array.Length; i++)
+                    {
+                        // 배열안에 있는 값을 하나씩 가져온다
+                        int nn = array[i];
+                        // 가져온 값과 n과 비교한다. 두개의 값이 같으면
+                        if (nn == n)
+                        {
+                            //  넘겨주는 값에 1을 더한다
+                            answer++;
+                        }
+                    } */
+
+            // foreach
+            // 배열의 크기만큼 반복한다
+            foreach (int val in array)
+            {
+                // foreach문에서 차례로 넘겨주는 값을 가져온다
+                // 가져온 값과 n과 비교한다. 두개의 값이 같으면
+                if (val == n)
+                    // 넘겨주는 값에 1을 더한다
+                    answer += 1;
+            }
+            return answer;
+        }
+
+        public static string Solution0719(string my_string, int n)
+        {
+            string answer = "";
+            // my_string에 들어있는 각 문자를 처음부터 돌면서 하나씩 얻어와서
+            foreach (var item in my_string)
+            {
+                // n번만큼 돌려서
+                for (var i = 0; i < n; i++)
+                {
+                    // 그걸 answer에 담는다
+                    // string연산을 할 경우엔 StringBuilder를 쓰면 효율적이다.
+                    answer += item;
+                }
+            }
+            return answer;
+        }
     }
 }
