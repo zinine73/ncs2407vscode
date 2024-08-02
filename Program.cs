@@ -10,6 +10,7 @@ internal class Program
         //var strl = new string[]{"I", "Love", "Programmers."};
         int answer = Programmers.Solution0801(64, 6);
         //Utils.PrintIntArray(answer);
-        Console.WriteLine(answer);
+        //Console.WriteLine(answer);
+        CSharpStudy.Basic();
     }
 }
