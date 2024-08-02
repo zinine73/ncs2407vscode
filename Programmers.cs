@@ -5,6 +5,42 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 가위 바위 보
+        public static string Solution0802(string rsp)
+        {
+            string answer = "";
+            // 주어진 string의 크기만큼 반복한다
+            for (int i = 0; i < rsp.Length; i++)
+            {
+                // 차례대로(인덱스에 따라) 주어진 문자열(혹은 char형)을
+                char chr = rsp[i];
+                // 가위(2), 바위(0), 보(5)냐에 따라
+                // 그걸 이기는 가위바위보의 숫자(결국 문자열)를
+                // answer에 넣는다
+                if (chr == '2')
+                {
+                    answer += "0";
+                }
+                else if (chr == '0')
+                {
+                    answer += "5";
+                }
+                else
+                {
+                    answer += "2";
+                }
+            }
+            // foreach를 사용할 때 ====================================
+            answer = "";
+            foreach (var item in rsp)
+            {
+                if (item == '2')        answer += "0";
+                else if (item == '0')   answer += "5";
+                else                    answer += "2"; 
+            }
+            return answer;
+        }
+
         // 양꼬치
         public static int Solution0801(int n, int k)
         {
