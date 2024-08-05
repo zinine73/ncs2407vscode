@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Myevan;
 
@@ -6,15 +7,72 @@ namespace Zinine
 {
     public class CSharpStudy
     {
+
         public static void Basic()
         {
+
             // value타입 데이터형에 ?를 붙여서 null 값도 가능하게 만든다
             int? i = null; // i가 null 값을 가질 수 있다
 
             // 문자열에서 특정 문자열 가져오는 것 > Substring(시작인덱스, 길이)
             string s3 = "C# Programming";
             string subs = s3.Substring(1, 5);
-            Console.WriteLine($"SubString: {subs}");
+            //Console.WriteLine($"SubString: {subs}");
+        }
+
+        // Enum
+        public enum Direction
+        {
+            East = 4,
+            West = 3,
+            South = 2,
+            North = 1
+        }
+
+        public enum GameState
+        {
+            Init = 1,
+            Lobby,
+            Login,
+            Main,
+            Battle,
+            Win,
+            Die,
+            GameOver,
+
+            none = 0
+        }
+
+        public static void EnumSample()
+        {
+            Direction dir = Direction.South;
+
+            switch (dir)
+            {
+                case Direction.East:
+                case Direction.West:
+                    Console.WriteLine(dir);
+                    break;
+
+                case Direction.South:
+                    break;
+
+                case Direction.North:
+                    break;
+
+                default:
+                    Console.WriteLine("이런 경우는 없다");
+                    break;
+            }
+
+            Console.WriteLine($"Your direction is {dir}, value : {(int)dir}");
+
+            GameState state;
+            state = GameState.Init;
+            if (state == GameState.Battle)
+            {
+                state = GameState.Win;
+            }
         }
 
         static void KoreanJosa()
