@@ -5,6 +5,22 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 머쓱이보다 키 큰 사람
+        public static int Solution0805(int[] array, int height)
+        {
+            int answer = 0;
+            //for (int i = 0; i < array.Length; i++)
+            foreach (var item in array)
+            {
+                //if (array[i] > height)
+                if (item > height)
+                {
+                    answer++;
+                }
+            }
+            return answer;
+        }
+
         // 가위 바위 보
         public static string Solution0802(string rsp)
         {
