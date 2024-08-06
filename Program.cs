@@ -13,4 +13,9 @@ internal class Program
         Console.WriteLine(answer);
         //CSharpStudy.EnumSample();
     }
+
+    private static void BranchTest()
+    {
+        Console.WriteLine("good");
+    }
 }
