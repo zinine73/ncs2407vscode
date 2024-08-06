@@ -13,4 +13,14 @@ internal class Program
         Console.WriteLine(answer);
         //CSharpStudy.EnumSample();
     }
+
+    public static int Sum(int from, int to)
+    {
+        int sum = 0;
+        for (int i = from; i <= to; i++)
+        {
+            sum++;
+        }
+        return sum;
+    }
 }
