@@ -5,6 +5,17 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 배열 두배 만들기
+        public static int[] Solution0806(int[] numbers)
+        {
+            //int[] answer = new int[numbers.Length];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] *= 2;
+            }
+            return numbers;
+        }
+
         // 머쓱이보다 키 큰 사람
         public static int Solution0805(int[] array, int height)
         {
