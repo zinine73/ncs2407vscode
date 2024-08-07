@@ -5,6 +5,12 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 점의 위치 구하기
+        public static int Solution0807(int[] dot)
+        {
+            return (dot[0] >= 0) ? (dot[1] >= 0) ? 1 : 4 : (dot[1] >= 0) ? 2 : 3;
+        }
+
         // 배열 두배 만들기
         public static int[] Solution0806(int[] numbers)
         {
