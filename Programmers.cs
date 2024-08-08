@@ -5,6 +5,21 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 아이스 아메리카노
+        public static int[] Solution0808(int money)
+        {
+            //return new int[]{money/5500,money%5500};
+            int[] answer = new int[2];
+            const int coffee = 5500;
+            int i = 0;
+            for (i = money; i >= coffee; i = i - coffee)
+            {
+                answer[0] += 1;
+            }
+            answer[1] = i;
+            return answer;
+        }
+
         // 점의 위치 구하기
         public static int Solution0807(int[] dot)
         {
