@@ -10,8 +10,8 @@ internal class Program
         //var strl = new string[]{"I", "Love", "Programmers."};
         int answer = Programmers.Solution0807(num_list);
         //Utils.PrintIntArray(answer);
-        Console.WriteLine(answer);
-        //CSharpStudy.EnumSample();
+        //Console.WriteLine(answer);
+        CSharpStudy.Basic();
     }
 
     public static int Sum(int from, int to)

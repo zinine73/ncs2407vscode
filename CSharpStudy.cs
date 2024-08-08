@@ -10,7 +10,6 @@ namespace Zinine
 
         public static void Basic()
         {
-
             // value타입 데이터형에 ?를 붙여서 null 값도 가능하게 만든다
             int? i = null; // i가 null 값을 가질 수 있다
 
@@ -18,6 +17,14 @@ namespace Zinine
             string s3 = "C# Programming";
             string subs = s3.Substring(1, 5);
             //Console.WriteLine($"SubString: {subs}");
+
+            string[] str = new string[3] {"AB", "CD", "EF"};
+            foreach (var item in str) // item이 string형이고
+            //foreach (var item in s3) // item이 char형이다
+            {
+                Console.WriteLine(item);
+            }
+
         }
 
         // Enum
@@ -231,6 +238,14 @@ namespace Zinine
                 ai++;
                 ii--;
             }
+
+            // ===> do ~ while
+            do
+            {
+                ai++;
+                ii--;
+            } while (ii > 0);
+            
             Console.WriteLine(ai);
         }
 
