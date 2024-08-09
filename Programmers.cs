@@ -1,10 +1,49 @@
 using System;
 using System.Collections.Generic;
+using System.Formats.Asn1;
 
 namespace Zinine
 {
     public class Programmers
     {
+        // 문자열 뒤집기(코딩 기초 트레이닝)
+        public static string Solution08092(string my_string, int s, int e)
+        {
+            char[] chr = my_string.ToArray();
+            Array.Reverse(chr, s, e - s + 1);
+            return new string(chr);
+        }
+
+        // 문자열 뒤집기(코딩테스트 입문)
+        public static string Solution0809(string my_string)
+        {
+            // Array의 뒤집기 : Reverse
+            char[] chr = my_string.ToArray();
+            Array.Reverse(chr);
+            return new string(chr);
+
+            // List
+            var list = new List<char>(my_string);
+            list.Reverse();
+            return new string(list.ToArray());
+
+            // for
+            string answer = "";
+            for (int i = my_string.Length - 1; i >= 0; i--)
+            {
+                answer += my_string[i];
+            }
+            return answer;
+
+            // foreach
+            //string answer = "";
+            foreach (var item in my_string)
+            {
+                answer = item + answer;
+            }
+            return answer;
+        }
+
         // 아이스 아메리카노
         public static int[] Solution0808(int money)
         {
