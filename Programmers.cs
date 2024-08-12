@@ -6,6 +6,23 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 배열 자르기
+        public static int[] Solution0812(int[] numbers, int num1, int num2)
+        {
+            // 리턴할 배열의 크기부터 구하자
+            int len = num2 - num1 + 1;
+            // 구한 크기만큼 배열을 선언
+            int[] answer = new int[len];
+            // 구한 크기만큼 돌면서
+            for (int i = 0; i < len; i++)
+            {
+                // 인덱스에 해당 하는 값을 배열에 넣는다
+                answer[i] = numbers[i + num1];
+            }
+            // 배열 리턴
+            return answer;
+        }
+
         // 문자열 뒤집기(코딩 기초 트레이닝)
         public static string Solution08092(string my_string, int s, int e)
         {

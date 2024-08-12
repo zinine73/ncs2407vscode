@@ -7,6 +7,47 @@ namespace Zinine
 {
     public class CSharpStudy
     {
+        private static int hp;
+
+        // Get
+        public static int GetHp()
+        {
+            return hp;
+        }
+
+        // Set
+        public static void SetHp(int val)
+        {
+            if (val > 100)
+            {
+                Console.WriteLine("Over 100...");
+            }
+            hp = val;
+        }
+
+        // property
+        public static int mp
+        {
+            get
+            {
+                return mp;
+            }
+
+            set
+            {
+                if (value > 100)
+                {
+                    Console.WriteLine("Over 100...");
+                }
+                else
+                {
+                    mp = value;
+                }
+            }
+        }
+
+        private static int speed { get; set; }
+        public static int weight;
 
         public static void Basic()
         {
