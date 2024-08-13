@@ -8,8 +8,16 @@ internal class Program
         int[] inv2 = new int[]{1,3,5};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        int[] answer = Programmers.Solution0812(inv2, 1, 2);
-        Utils.PrintIntArray(answer);
+        int[] answer = new int[]{};
+        try
+        {
+            answer = Programmers.Solution0812(inv2, 1,1);
+            Utils.PrintIntArray(answer);
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
         //Console.WriteLine(answer);
         //CSharpStudy.Basic();
     }

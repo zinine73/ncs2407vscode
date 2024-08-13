@@ -6,6 +6,32 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 모음 제거
+        public static string Solution0813(string my_string)
+        {
+            string answer = "";
+            /*
+            answer = my_string.Replace("a", "");
+            answer = answer.Replace("e", "");
+            answer = answer.Replace("i", "");
+            answer = answer.Replace("o", "");
+            answer = answer.Replace("u", "");
+            */
+            answer = my_string.Replace("a", "").Replace("e", "").Replace("i", "").Replace("o","").Replace("u","");
+            /*
+            foreach (var item in my_string)
+            {
+                if ((item != 'a') &&
+                    (item != 'e') &&
+                    (item != 'i') &&
+                    (item != 'o') &&
+                    (item != 'u'))
+                answer += item;
+            }
+            */
+            return answer;
+        }
+
         // 배열 자르기
         public static int[] Solution0812(int[] numbers, int num1, int num2)
         {
@@ -13,6 +39,10 @@ namespace Zinine
             int len = num2 - num1 + 1;
             // 구한 크기만큼 배열을 선언
             int[] answer = new int[len];
+            
+            // try~catch문 예제 보려고 일부러 에러 발생시킴
+            //len = answer[len];
+            
             // 구한 크기만큼 돌면서
             for (int i = 0; i < len; i++)
             {
