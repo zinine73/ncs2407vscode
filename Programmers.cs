@@ -6,6 +6,21 @@ namespace Zinine
 {
     public class Programmers
     {
+        // n보다 커질 때까지 더하기
+        public static int Solution0814(int[] numbers, int n)
+        {
+            int answer = 0;
+            foreach (var item in numbers)
+            {
+                answer += item;
+                if (answer > n)
+                {
+                    break;
+                }
+            }
+            return answer;
+        }
+
         // 모음 제거
         public static string Solution0813(string my_string)
         {
