@@ -68,6 +68,36 @@ namespace Zinine
 
         }
 
+        public static void DicSample()
+        {
+            var loginData = new Dictionary<string, string>();
+            loginData.Add("zinine", "password");
+            loginData.Add("whdgus", "absvs");
+            loginData.Add("aleifj", "ooooa111");
+            loginData.Add("yuyuy7878", "00000000");
+
+            //string pw = loginData["zinine"];
+            foreach (var item in loginData)
+            {
+                //Console.WriteLine($"{item.Key} : {item.Value}");
+            }
+
+            foreach (string item in loginData.Keys)
+            {
+                //Console.WriteLine(item);
+            }
+            
+            string checkid = "whdgus";
+            if (loginData.ContainsKey(checkid) == false)
+            {
+                Console.WriteLine($"{checkid} 는 없습니다...");
+            }
+            else
+            {
+                Console.WriteLine($"{checkid}의 암호는 {loginData[checkid]}입니다...");
+            }
+        }
+
         // Enum
         public enum Direction
         {

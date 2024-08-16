@@ -12,8 +12,8 @@ internal class Program
         //var strl = new string[]{"I", "Love", "Programmers."};
         int answer = Programmers.Solution0814(inv2, 139);
         //Utils.PrintIntArray(answer);
-        Console.WriteLine(answer);
-        //CSharpStudy.Basic();
+        //Console.WriteLine(answer);
+        CSharpStudy.DicSample();
     }
 
     public static int Sum(int from, int to)
