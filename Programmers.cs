@@ -6,6 +6,19 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 첫 번째로 나오는 음수
+        public static int Solution0816(int[] num_list)
+        {
+            for (int i = 0; i < num_list.Length; i++)
+            {
+                if (num_list[i] < 0)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
         // n보다 커질 때까지 더하기
         public static int Solution0814(int[] numbers, int n)
         {

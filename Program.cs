@@ -6,14 +6,14 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int[] num_list = new int[]{-7,9};
+        int[] num_list = new int[]{13, 22, 53, 24, 15, 6};
         int[] inv2 = new int[]{58, 44, 27, 10, 100};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        int answer = Programmers.Solution0814(inv2, 139);
+        int answer = Programmers.Solution0816(num_list);
         //Utils.PrintIntArray(answer);
-        //Console.WriteLine(answer);
-        CSharpStudy.DicSample();
+        Console.WriteLine(answer);
+        //CSharpStudy.DicSample();
     }
 
     public static int Sum(int from, int to)
