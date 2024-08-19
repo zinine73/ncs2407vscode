@@ -1,11 +1,51 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Formats.Asn1;
 
 namespace Zinine
 {
     public class Programmers
     {
+        // 수 조작하기 2
+        public static string Solution08192(int[] numlog)
+        {
+            string answer = "";
+            for (int i = 0; i < numlog.Length - 1; i++)
+            {
+                int val = numlog[i+1] - numlog[i];
+                if (val == 1) answer += "w";
+                else if (val == -1) answer += "s";
+                else if (val == 10) answer += "d";
+                else answer += "a";
+            }
+            return answer;
+        }
+
+        // 수 조작하기 1
+        public static int Solution0819(int n, string control)
+        {
+            foreach (var item in control)
+            {
+                switch (item)
+                {
+                    case 'w':
+                        n += 1;
+                        break;
+                    case 's':
+                        n -= 1;
+                        break;
+                    case 'd':
+                        n += 10;
+                        break;
+                    case 'a':
+                        n -= 10;
+                        break;
+                }
+            }
+            return n;
+        }
+
         // 첫 번째로 나오는 음수
         public static int Solution0816(int[] num_list)
         {
