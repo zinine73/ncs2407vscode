@@ -4,8 +4,169 @@ using Myevan;
 
 namespace Zinine
 {
+    /*
+    struct Scustomer
+    {
+        public string name;
+        public int age;
+
+        public string GetSData()
+        {
+            string data = $"{name}, {age}";
+            return data;
+        }
+    }
+
+    class Ccustomer
+    {
+        public string name;
+        public int age;
+
+        public string GetCData()
+        {
+            string data = $"{name}, {age}";
+            return data;
+        }
+    }
+    */
+
+    public struct BaseCustomerData
+    {
+        public string name;
+        public int age;
+    }
+
+    public class CustomerData
+    {
+        public BaseCustomerData baseData;
+        public int memberKeep;
+        private int money;
+        // 생성자
+        public CustomerData(int memberKeep)
+        {
+            this.memberKeep = memberKeep;
+        }
+
+        // 소멸자
+        ~CustomerData()
+        {
+        }
+
+        public string GetCData()
+        {
+            string data = $"{baseData.name}, {baseData.age}, {memberKeep}";
+            return data;
+        }
+    }
+
+    public class ChildCustomer : CustomerData
+    {
+        public string place;
+
+        public ChildCustomer(int mk) : base(mk)
+        {
+        }
+
+        public bool isCute()
+        {
+            return true;
+        }
+    }
+
+
+    public class ChessPiece
+    {
+        public virtual void Move()
+        {
+            Console.WriteLine("do not move");
+        }
+
+        public void SetPosition(int x)
+        {
+
+        }
+
+        public void SetPosition(int x, int y = 1)
+        {
+            
+        }
+
+        public void SetPosition()
+        {
+
+        }
+
+        public void SetPosition(string str)
+        {
+
+        }
+    }
+
+    public class Knight : ChessPiece
+    {
+        public override void Move()
+        {
+            Console.WriteLine("한칸 앞으로 대각선 앞으로");
+        }
+    }
+
+    public class Bishop : ChessPiece
+    {
+
+        public override void Move()
+        {
+            Console.WriteLine("대각선으로 걸리는게 없는 곳");
+        }
+    }
+
+    public class Rook : ChessPiece
+    {
+        //public override void Move()
+        //{
+        //    Console.WriteLine("상하좌우으로 걸리는게 없는 곳");
+        //}
+    }
+
     public class CSharpStudy
     {
+        public static void ClassSample()
+        {
+            CustomerData sc = new CustomerData(0);
+            sc.baseData.name = "Lee";
+            sc.baseData.age = 30;
+            //Console.WriteLine(sc.GetCData());
+
+            CustomerData cc = new CustomerData(1);
+            cc.baseData.name = "Kim";
+            cc.baseData.age = 26;
+            //Console.WriteLine(cc.GetCData());
+
+            ChildCustomer child = new ChildCustomer(2);
+            child.memberKeep = 100;
+            child.place = "seoul";
+            //child.isCute();
+            //child.GetCData();
+
+            CustomerData ch2 = new ChildCustomer(0);
+
+            // 부모클래스로 틀을 잡고 자식클래스로 정의할 수 있다
+            ChessPiece cp = new ChessPiece();
+            ChessPiece kn = new Knight();
+            ChessPiece ro = new Rook();
+            ChessPiece bi = new Bishop();
+
+            // 오버라이딩
+            cp.Move();
+            kn.Move();
+            ro.Move();
+            bi.Move();
+
+            // 오버로딩
+            cp.SetPosition(10);
+            cp.SetPosition();
+            cp.SetPosition(3);
+        }
+
         private static int hp;
 
         // Get
