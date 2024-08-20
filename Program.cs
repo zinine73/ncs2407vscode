@@ -11,7 +11,7 @@ internal class Program
         int[] inv2 = new int[]{58, 44, 27, 10, 100};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        string answer = Programmers.Solution08192(num_list);
+        int answer = Programmers.Solution0820(91,2);
         //Utils.PrintIntArray(answer);
         Console.WriteLine(answer);
         //CSharpStudy.DicSample();

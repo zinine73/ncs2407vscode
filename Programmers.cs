@@ -7,6 +7,23 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 두 수의 연산값 비교하기
+        public static int Solution0820(int a, int b)
+        {
+            int answer = 0;
+            string apb = $"{a}{b}";
+            int iapb = Convert.ToInt32(apb);
+            int tab = 2 * a * b;
+            if (iapb == tab)
+            {
+                answer = iapb;
+            }
+            else
+            {
+                answer = Math.Max(iapb, tab);
+            }
+            return answer;
+        }
         // 수 조작하기 2
         public static string Solution08192(int[] numlog)
         {
