@@ -8,6 +8,22 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 카운트 업
+        public static int[] Solution0821(int start, int end)
+        {
+            // 리턴할 배열의 크기를 먼저 구해보자
+            int len = end - start + 1;
+            // 구해진 크기만큼 배열을 잡는다
+            int[] answer = new int[len];
+            // 배열의 크기만큼 반복문을 실행한다
+            for (int i = 0; i < answer.Length; i++)
+            {
+                // 배열에 start부터 반복해서 넣자
+                answer[i] = start + i;
+            }
+            return answer;
+        }
+
         // 두 수의 연산값 비교하기
         public static int Solution0820(int a, int b)
         {
