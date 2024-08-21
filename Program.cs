@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography;
+using System.Text;
 using Zinine;
 // 지정해 놓은 형식만을 사용한다는 뜻이 된다
 using Random = System.Random;
@@ -13,17 +14,7 @@ internal class Program
         //var strl = new string[]{"I", "Love", "Programmers."};
         int answer = Programmers.Solution0820(91,2);
         //Utils.PrintIntArray(answer);
-        Console.WriteLine(answer);
-        //CSharpStudy.DicSample();
-    }
-
-    public static int Sum(int from, int to)
-    {
-        int sum = 0;
-        for (int i = from; i <= to; i++)
-        {
-            sum++;
-        }
-        return sum;
+        //Console.WriteLine(answer);
+        Utils.MakeLotto();
     }
 }

@@ -129,6 +129,56 @@ namespace Zinine
 
     public class CSharpStudy
     {
+        class ListClass
+        {
+            public List<int> list = new List<int>();
+        }
+
+        public static void NullableSample()
+        {
+            // ?. : null이 아니면 참조하고, null이면 null
+            //ListClass lc = new ListClass();
+            ListClass lc = null;
+            Console.WriteLine(lc?.list.Count);
+
+            // ?? : null이면 오른쪽 값으로 처리
+            //Object obj = new Dictionary<int, int>();
+            Object obj = null;
+            Object a = obj ?? new List<int>();
+            Console.WriteLine(a);
+        }
+
+        public static int GetListCount(List<int> list)
+        {
+            /*
+            if (list == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return list.Count;
+            }
+            */
+            //return (list == null) ? 0 : list.Count;
+            return list?.Count ?? 0;
+        }
+
+        public static void CompareToSample()
+        {
+            int a = 1;
+            int b = 0;
+            Console.WriteLine(a.CompareTo(b));
+            string s1 = "abc";
+            string s2 = "abc";
+            Console.WriteLine(s1.CompareTo(s2));
+            // if (s1 == s2) string 비교시에 ComrateTo 사용하자
+            if (s1.CompareTo(s2) == 0) { }
+            StringBuilder sb = new StringBuilder();
+            sb.Append(s1);
+            s2 = sb.ToString();
+        }
+
         public static void ClassSample()
         {
             CustomerData sc = new CustomerData(0);
@@ -313,9 +363,11 @@ namespace Zinine
             }
         }
 
+        /// <summary>
+        /// 한글 조사 변환 > using Myevan 해야 Korean.Re~ 사용할 수 있다
+        /// </summary>
         static void KoreanJosa()
         {
-            // 한글 조사 변환 > using Myevan 해야 Korean.Re~ 사용할 수 있다
             Console.WriteLine($"나(은)는 지금 탕후루(탕)후루 먹고싶다.");
             string a = Korean.ReplaceJosa($"나(은)는");
             string b = Korean.ReplaceJosa($"탕후루(탕)후루");
@@ -480,6 +532,11 @@ namespace Zinine
             Console.WriteLine(ai);
         }
 
+        /// <summary>
+        /// 하니가 3살 때 코나키타발루 를 다녀온것을 기억했다. 이걸 list로 만들어 보자
+        /// </summary>
+        /// <param name="aaa"></param>
+        /// <returns></returns>
         private static string Sample(int aaa)
         {
             //Func();
@@ -488,7 +545,6 @@ namespace Zinine
             string[,] trip = new string[2, 5]{{"도쿄", "타이베이", "오사카", "홍콩", "발리"},
         {"일본", "대만", "일본", "중국", "인도네시아"}};
 
-            // 하니가 3살 때 코나키타발루 를 다녀온것을 기억했다. 이걸 list로 만들어 보자
             List<string> city2 = new List<string>(city);
             city2.Insert(3, "코타키나발루");
             // 배열에 있는 모든 요소에 접근하려할 때 foreach 사용하면 좋다
