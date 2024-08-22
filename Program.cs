@@ -8,16 +8,12 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int[] num_list = new int[]{0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1};
+        int[] num_list = new int[]{-1, 2, 5, 6, 3};
         int[] inv2 = new int[]{58, 44, 27, 10, 100};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        int[] answer = Programmers.Solution0821(3, 10);
+        int answer = Programmers.Solution0822(num_list);
         //Utils.PrintIntArray(answer);
-        //Console.WriteLine(answer);
-        //Utils.MakeLotto();
-        int val = 100;
-        CSharpStudy.Calculate(ref val);
-        //Console.WriteLine(val);
+        Console.WriteLine(answer);
     }
 }

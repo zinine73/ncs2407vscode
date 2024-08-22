@@ -8,6 +8,25 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 홀수 vs 짝수
+        public static int Solution0822(int[] num_list)
+        {
+            int hol = 0;
+            int jak = 0;
+            for (int i = 0; i < num_list.Length; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    hol += num_list[i];
+                }
+                else
+                {
+                    jak += num_list[i];
+                }
+            }
+            return Math.Max(hol, jak);
+        }
+
         // 카운트 업
         public static int[] Solution0821(int start, int end)
         {
