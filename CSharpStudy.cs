@@ -129,6 +129,39 @@ namespace Zinine
 
     public class CSharpStudy
     {
+        // Named parameter, Optional parameter
+        public static void NamedParam(string name, int age, int money)
+        {
+        }
+
+        public static void NamedParam2(string name, int age = 1, int money = 0)
+        {
+        }
+
+        public static void NamedSample()
+        {
+            NamedParam("Lee", 40, 1000);
+            NamedParam(name:"Kim", money:10, age:10);
+            NamedParam(age:25, name:"Park", money:0);
+
+            NamedParam2("Choi", 57, 1000000);
+            NamedParam2("Yoon");
+            NamedParam2("Cho", money:10000);
+        }
+
+        // pass by value, pass by ref
+        public static void Calculate(ref int a)
+        {
+            a *= 2;
+            Console.WriteLine($"a : {a}");
+
+            // x, y 두 값의 체인지
+            int x = 10;
+            int y = 20;
+            Utils.Swap(ref x, ref y);
+            Console.WriteLine($"final x:{x}, y:{y}");
+        }
+
         class ListClass
         {
             public List<int> list = new List<int>();

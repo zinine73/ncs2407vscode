@@ -13,8 +13,11 @@ internal class Program
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
         int[] answer = Programmers.Solution0821(3, 10);
-        Utils.PrintIntArray(answer);
+        //Utils.PrintIntArray(answer);
         //Console.WriteLine(answer);
         //Utils.MakeLotto();
+        int val = 100;
+        CSharpStudy.Calculate(ref val);
+        //Console.WriteLine(val);
     }
 }

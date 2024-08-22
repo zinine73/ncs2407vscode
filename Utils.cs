@@ -5,6 +5,19 @@ namespace Zinine
     public class Utils
     {
         /// <summary>
+        /// 두개의 int값을 swap 해주는 함수
+        /// pass by ref 형식으로 사용해야 한다
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        public static void Swap(ref int x, ref int y)
+        {
+            int temp = x;
+            x = y;
+            y = temp;
+        }
+
+        /// <summary>
         /// Integer 배열을 한줄에 출력해주는 함수
         /// </summary>
         /// <param name="answer"></param>
