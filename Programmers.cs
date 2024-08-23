@@ -8,6 +8,12 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 주사위의 개수
+        public static int Solution0823(int[] box, int n)
+        {
+            return (box[0] / n) * (box[1] / n) * (box[2] / n);
+        }
+
         // 홀수 vs 짝수
         public static int Solution0822(int[] num_list)
         {

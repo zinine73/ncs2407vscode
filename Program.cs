@@ -8,11 +8,11 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int[] num_list = new int[]{-1, 2, 5, 6, 3};
+        int[] num_list = new int[]{10,8,6};
         int[] inv2 = new int[]{58, 44, 27, 10, 100};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        int answer = Programmers.Solution0822(num_list);
+        int answer = Programmers.Solution0823(num_list, 3);
         //Utils.PrintIntArray(answer);
         Console.WriteLine(answer);
     }
