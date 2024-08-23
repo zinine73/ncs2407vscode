@@ -1,9 +1,12 @@
+//#define DEVELOP
+#define RELEASE
 using System;
 using System.Text;
 using Myevan;
 
 namespace Zinine
 {
+    #region Struct Class
     /*
     struct Scustomer
     {
@@ -38,9 +41,17 @@ namespace Zinine
 
     public class CustomerData
     {
+        #region public member
         public BaseCustomerData baseData;
+
         public int memberKeep;
+        #endregion
+
+        #region privates
         private int money;
+        #endregion
+        
+        #region functions
         // 생성자
         public CustomerData(int memberKeep)
         {
@@ -57,6 +68,7 @@ namespace Zinine
             string data = $"{baseData.name}, {baseData.age}, {memberKeep}";
             return data;
         }
+        #endregion
     }
 
     public class ChildCustomer : CustomerData
@@ -126,6 +138,7 @@ namespace Zinine
         //    Console.WriteLine("상하좌우으로 걸리는게 없는 곳");
         //}
     }
+    #endregion 
 
     public class CSharpStudy
     {
@@ -149,6 +162,7 @@ namespace Zinine
             NamedParam2("Cho", money:10000);
         }
 
+        #region pass by ref
         // pass by value, pass by ref
         public static void Calculate(ref int a)
         {
@@ -161,6 +175,7 @@ namespace Zinine
             Utils.Swap(ref x, ref y);
             Console.WriteLine($"final x:{x}, y:{y}");
         }
+        #endregion pass by ref
 
         class ListClass
         {
@@ -217,8 +232,11 @@ namespace Zinine
             CustomerData sc = new CustomerData(0);
             sc.baseData.name = "Lee";
             sc.baseData.age = 30;
-            //Console.WriteLine(sc.GetCData());
-
+#if (DEVELOP)
+            Console.WriteLine(sc.GetCData());
+#else
+            Console.WriteLine("");
+#endif
             CustomerData cc = new CustomerData(1);
             cc.baseData.name = "Kim";
             cc.baseData.age = 26;
