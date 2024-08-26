@@ -8,6 +8,26 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 0 떼기
+        public static string Solution0826(string n_str)
+        {
+            string answer = "";
+            bool zero = true;
+            while(zero)
+            {
+                if(n_str[0] == '0')
+                {
+                    n_str = n_str.Substring(1);//, n_str.Length - 1);
+                }
+                else
+                { 
+                    zero = false; 
+                }     
+            }
+            answer = n_str;
+            return answer;
+        }
+
         // 주사위의 개수
         public static int Solution0823(int[] box, int n)
         {

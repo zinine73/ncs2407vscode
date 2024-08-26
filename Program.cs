@@ -12,7 +12,7 @@ internal class Program
         int[] inv2 = new int[]{58, 44, 27, 10, 100};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        int answer = Programmers.Solution0823(num_list, 3);
+        string answer = Programmers.Solution0826("0010");
         //Utils.PrintIntArray(answer);
         Console.WriteLine(answer);
     }
