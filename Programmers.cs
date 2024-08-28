@@ -8,6 +8,60 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 주사위 게임 1
+        public static int Solution08282(int a, int b)
+        {
+            int answer = 0;
+            if (a % 2 == 1)
+            {
+                if (b % 2 == 1)
+                {
+                    answer = a * a + b * b;
+                }
+                else
+                {
+                    answer = 2 * (a + b);
+                }
+            }
+            else
+            {
+                if (b % 2 == 1)
+                {
+                    answer = 2 * (a + b);
+                }
+                else
+                {
+                    answer = Math.Abs(a - b);
+                }
+            }
+            return answer;
+        }
+
+        // 뒤에서 5등 위로
+        public static int[] Solution0828(int[] num_list)
+        {
+            // make List
+            var list = new List<int>(num_list);
+            //var relist = new List<int>();
+
+            // List sort
+            list.Sort();
+
+            // indexer
+            //for (int i = 5; i < list.Count; i++)
+            //{
+            //    relist.Add(list[i]);
+            //}
+            //return relist.ToArray();
+
+            // RemoveAt
+            for (int i = 0; i < 5; i++)
+            {
+                list.RemoveAt(0);
+            }
+            return list.ToArray();
+        }
+
         // 0 떼기
         public static string Solution0826(string n_str)
         {
