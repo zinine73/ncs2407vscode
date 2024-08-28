@@ -6,7 +6,65 @@ using Myevan;
 
 namespace Zinine
 {
+    #pragma warning restore format
     #region Struct Class
+    public abstract class Patient
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public int money;
+        // 외부에서 접근할 수 없고, 자신과 상속받은 클래스만 사용할 수 있음
+        protected bool vip = false;
+
+        public bool IsVIP()
+        {
+            return vip;
+        }
+
+        public void WhereSick()
+        {
+        }
+
+        public DateTime MeetDoctor()
+        {
+            DateTime dateTime = new DateTime();
+            return dateTime;
+        }
+
+        public abstract void Diagnosis();
+        public virtual void Operation()
+        {
+            money = 10000;
+        }
+    }
+
+    public class Dentistry : Patient
+    {
+        public override void Diagnosis()
+        {
+            //throw new NotImplementedException();
+        }
+
+        public void CleanTeeth()
+        {
+
+        }
+    }
+
+    public class Otolaryngology : Patient
+    {
+        public override void Diagnosis()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Operation()
+        {
+            money = 20000;
+            vip = true;
+        }
+    }
+
     /*
     struct Scustomer
     {
@@ -142,6 +200,26 @@ namespace Zinine
 
     public class CSharpStudy
     {
+        public static void Inheritance()
+        {
+            Dentistry p1 = new Dentistry();
+            Otolaryngology p2 = new Otolaryngology();
+            p1.WhereSick();
+            p1.CleanTeeth();
+            p1.MeetDoctor();
+            p1.Diagnosis();
+            p1.MeetDoctor();
+
+            p2.MeetDoctor();
+            p2.Diagnosis();
+            p2.Operation();
+
+            if (p1.IsVIP())
+            {
+                // 주차권
+            }
+        }
+
         // Named parameter, Optional parameter
         public static void NamedParam(string name, int age, int money)
         {
