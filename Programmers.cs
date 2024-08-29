@@ -8,6 +8,24 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 배열의 원소만큼 추가하기
+        public static int[] Solution0829(int[] arr)
+        {
+            // list X 생성
+            var X = new List<int>();
+            // for문으로 arr의 원소를 탐색
+            foreach (var item in arr)
+            {
+                // 각 원소의 크기만큼 X 에 a 값을 추가하는 것을 반복
+                for (int j = 0; j < item; j++)
+                {
+                    X.Add(item);
+                } 
+            }
+            // X를 ToArray를 사용하여 배열로 리턴
+            return X.ToArray();
+        }
+
         // 주사위 게임 1
         public static int Solution08282(int a, int b)
         {
