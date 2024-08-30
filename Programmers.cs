@@ -8,6 +8,12 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 세균 증식
+        public static int Solution0830(int n, int t)
+        {
+            return n << t;
+        }
+
         // 배열의 원소만큼 추가하기
         public static int[] Solution0829(int[] arr)
         {
