@@ -11,8 +11,9 @@ internal class Program
         int[] num_list = new int[]{5, 1, 4};
         int[] inv2 = new int[]{58, 44, 27, 10, 100};
         //var strl = new string[]{"I", "Love", "Programmers."};
-        int answer = Programmers.Solution0830(7, 15);
-        //Utils.PrintIntArray(answer);
-        Console.WriteLine(answer);
+        Programmers pg = new Programmers();
+        int[] answer = pg.Solution0902(10);
+        Utils.PrintIntArray(answer);
+        //Console.WriteLine(answer);
     }
 }

@@ -8,6 +8,34 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 콜라츠 수열 만들기
+        public int[] Solution0902(int n)
+        {
+            // List를 하나 만들자
+            var list = new List<int>();
+            // while문으로 돌리자
+            while (n != 1)
+            {
+                // n을 List에 넣는다
+                list.Add(n);
+                // n 이 짝수인지 판별
+                if (n % 2 == 0)
+                {    
+                    // 짝수일때 변형
+                    n /= 2;
+                }
+                else
+                {
+                    // 홀수일때 변형
+                    n = 3 * n + 1;
+                }
+            }
+            // 마지막으로 해야할 일
+            list.Add(1);
+            // List를 배열형식으로 리턴하자
+            return list.ToArray();
+        } 
+
         // 세균 증식
         public static int Solution0830(int n, int t)
         {
