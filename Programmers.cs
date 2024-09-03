@@ -8,6 +8,24 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 5명씩
+        public string[] Solution0903(string[] names)
+        {
+            var answer = new List<string>();
+            int idx = 0;
+            foreach (string name in names)
+            {
+                if (idx == 0)
+                {
+                    answer.Add(name);
+                }
+                idx++;
+                if (idx == 5) idx = 0;
+            }
+
+            return answer.ToArray();
+        }
+
         // 콜라츠 수열 만들기
         public int[] Solution0902(int n)
         {
