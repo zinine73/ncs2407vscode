@@ -15,5 +15,7 @@ internal class Program
         string[] answer = pg.Solution0903(strl);
         //Utils.PrintIntArray(answer);
         //Console.WriteLine(answer);
+        CSharpStudy cs = new CSharpStudy();
+        cs.Perform();
     }
 }

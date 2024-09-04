@@ -200,6 +200,43 @@ namespace Zinine
 
     public class CSharpStudy
     {
+        #region Delegate
+        // delegate 선언
+        public delegate void MyDelegate(int i);
+
+        public void RunThis(int val)
+        {
+            Console.WriteLine($"Run This : {val}");
+        }
+
+        void RunThat(int value)
+        {
+            Console.WriteLine($"Run That : {value}");
+        }
+
+        void RunWho(int val, int val2)
+        {
+            Console.WriteLine($"Run Who : {val + val2}");
+        }
+
+        public void Perform()
+        {
+            // delegate의 instance 생성
+            MyDelegate run = new MyDelegate(RunThis);
+
+            // delegate 실행
+            run(100);
+
+            // 새로운 메서드 연결
+            run = new MyDelegate(RunThat);
+            run(100);
+
+            // 또 새로운 메서드 연결
+            run = RunThis;
+            run(200);
+        }
+        #endregion
+
         public static void Inheritance()
         {
             Dentistry p1 = new Dentistry();
