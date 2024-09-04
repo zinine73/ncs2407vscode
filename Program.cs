@@ -9,13 +9,13 @@ internal class Program
     private static void Main(string[] args)
     {
         int[] num_list = new int[]{5, 1, 4};
-        int[] inv2 = new int[]{58, 44, 27, 10, 100};
+        int[] inv2 = new int[]{-1, 2};
         var strl = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         Programmers pg = new Programmers();
-        string[] answer = pg.Solution0903(strl);
+        int answer = pg.Solution09042(inv2);
         //Utils.PrintIntArray(answer);
-        //Console.WriteLine(answer);
-        CSharpStudy cs = new CSharpStudy();
-        cs.Perform();
+        Console.WriteLine(answer);
+        //CSharpStudy cs = new CSharpStudy();
+        //cs.Perform();
     }
 }

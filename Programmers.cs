@@ -8,6 +8,40 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 최댓값 만들기(2)
+        public int Solution09042(int[] numbers)
+        {
+            int answer = -100000000;
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                for (int j = i + 1; j < numbers.Length; j++)
+                {
+                    if (answer < numbers[i] * numbers[j])
+                    {
+                        answer = numbers[i] * numbers[j];
+                    }
+                }
+            }
+            return answer;
+        }
+
+        // 최댓값 만들기(1)
+        public int Solution0904(int[] numbers)
+        {
+            int answer = 0;
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                for (int j = i + 1; j < numbers.Length; j++)
+                {
+                    if (answer < numbers[i] * numbers[j])
+                    {
+                        answer = numbers[i] * numbers[j];
+                    }
+                }
+            }
+            return answer;
+        }
+
         // 5명씩
         public string[] Solution0903(string[] names)
         {
