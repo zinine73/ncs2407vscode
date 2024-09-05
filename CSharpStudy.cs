@@ -225,15 +225,20 @@ namespace Zinine
             MyDelegate run = new MyDelegate(RunThis);
 
             // delegate 실행
-            run(100);
+            //run(100);
 
             // 새로운 메서드 연결
-            run = new MyDelegate(RunThat);
-            run(100);
+            //run = new MyDelegate(RunThat);
+            //run(100);
 
             // 또 새로운 메서드 연결
-            run = RunThis;
-            run(200);
+            //run = RunThis;
+            //run(200);
+
+            // 멀티캐스트가 가능하다
+            run += RunThat;
+            run += RunThis;
+            run(100);
         }
         #endregion
 
