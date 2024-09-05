@@ -8,6 +8,42 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 삼각형의 완성조건 (2)
+        public int Solution09052(int[] sides)
+        {
+            int answer = 0;
+            int big = Math.Max(sides[0], sides[1]);
+            int small = Math.Min(sides[0], sides[1]);
+            // x + small > big
+            // big - small < x <= big
+            for (int i = big - small + 1; i <= big; i++)
+            {
+                answer++;
+            }
+            // big + small > x
+            // big < x < big + small
+            for (int i = big + 1; i < big + small; i++)
+            {
+                answer++;
+            }
+
+            return answer;
+        }
+
+        // 삼각형의 완성조건 (1)
+        public int Solution0905(int[] sides)
+        {
+            //List<int> list = sides.ToList();
+            var list = new List<int>();
+            foreach (var side in sides)
+            {
+                list.Add(side);
+            }
+            list.Sort();
+            if (list[2] < list[0] + list[1]) return 1;
+            else return 2;
+        }
+
         // 최댓값 만들기(2)
         public int Solution09042(int[] numbers)
         {
