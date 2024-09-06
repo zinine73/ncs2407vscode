@@ -200,16 +200,19 @@ namespace Zinine
 
     public class CSharpStudy
     {
-        #region Delegate
+        #region delegate & event
         // delegate 선언
         public delegate void MyDelegate(int i);
+
+        // event 필드
+        public event MyDelegate runEvent;
 
         public void RunThis(int val)
         {
             Console.WriteLine($"Run This : {val}");
         }
 
-        void RunThat(int value)
+        public void RunThat(int value)
         {
             Console.WriteLine($"Run That : {value}");
         }
@@ -238,7 +241,23 @@ namespace Zinine
             // 멀티캐스트가 가능하다
             run += RunThat;
             run += RunThis;
-            run(100);
+            //run(100);
+
+            // event
+            runEvent += RunThis;
+            runEvent += RunThat;
+            runEvent -= RunThis;
+            // 이건 내부에서 사용하는거라 에러 안남
+            runEvent = RunThis;
+            runEvent(100);
+        }
+
+        public void Perform2(int val)
+        {
+            if (runEvent != null)
+            {
+                runEvent(val);
+            }
         }
         #endregion
 
@@ -725,6 +744,28 @@ namespace Zinine
             }
 
             return string.Empty;
+        }
+    }
+
+    public class CSharpEvent
+    {
+        CSharpStudy cs = new CSharpStudy();
+
+        public void EventSample()
+        {
+            cs.runEvent += cs.RunThis;
+            cs.runEvent += cs.RunThat;
+            cs.runEvent += RunAnother;
+            cs.runEvent -= cs.RunThat;
+            // 이건 에러나는 상황
+            //cs.runEvent = cs.RunThis;
+            //cs.runEvent(100);
+            cs.Perform2(100);
+        }
+
+        public static void RunAnother(int val)
+        {
+            Console.WriteLine($"Run another : {val}");
         }
     }
 }

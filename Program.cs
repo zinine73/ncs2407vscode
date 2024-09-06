@@ -14,8 +14,9 @@ internal class Program
         Programmers pg = new Programmers();
         int answer = pg.Solution09052(inv2);
         //Utils.PrintIntArray(answer);
-        Console.WriteLine(answer);
-        //CSharpStudy cs = new CSharpStudy();
-        //cs.Perform();
+        //Console.WriteLine(answer);
+        CSharpStudy cs = new CSharpStudy();
+        CSharpEvent cse = new CSharpEvent();
+        cse.EventSample();
     }
 }
