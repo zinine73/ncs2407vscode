@@ -12,11 +12,11 @@ internal class Program
         int[] inv2 = new int[]{11,7};
         var strl = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         Programmers pg = new Programmers();
-        int answer = pg.Solution09052(inv2);
+        int answer = pg.Solution0909("78720646226947352489");
         //Utils.PrintIntArray(answer);
-        //Console.WriteLine(answer);
-        CSharpStudy cs = new CSharpStudy();
-        CSharpEvent cse = new CSharpEvent();
-        cse.EventSample();
+        Console.WriteLine(answer);
+        //CSharpStudy cs = new CSharpStudy();
+        //CSharpEvent cse = new CSharpEvent();
+        //cse.EventSample();
     }
 }

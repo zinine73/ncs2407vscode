@@ -8,6 +8,24 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 9로 나눈 나머지
+        public int Solution0909(string number)
+        {
+            // 전체 값을 저장할 변수 하나를 생성
+            int total = 0;
+            // string은 char형의 배열임을 이용하여,
+            // 배열의 각 값을 다 돌면서 더해준다
+            foreach (var item in number)
+            {
+                // 각 item의 integer 값을 더해준다
+                //Console.WriteLine(item);
+                int val = item - '0';
+                total += val;
+            }
+            // 전체값을 9로 나눈 값을 리턴한다
+            return total % 9; 
+        }
+
         // 삼각형의 완성조건 (2)
         public int Solution09052(int[] sides)
         {
