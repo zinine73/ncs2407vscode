@@ -8,6 +8,50 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 간단한 식 계산하기
+        public int Solution09112(string str)
+        {
+            int answer = 0;
+            // string을 숫자와 수식으로 분리
+            string[] sa = str.Split(' ');
+            // 각 숫자(string)를 integer로 변환
+            int a = Convert.ToInt32(sa[0]);
+            int b = Int32.Parse(sa[2]);
+            // 각 수식에 맞게 계산
+            switch (sa[1])
+            {
+                case "+":
+                    answer = a + b;
+                    break;
+                case "-":
+                    answer = a - b;
+                    break;
+                case "*":
+                    answer = a * b;
+                    break;
+            }
+            return answer;
+        }
+
+        // 약수 구하기
+        public int[] Solution0911(int n)
+        {
+            // 리스트 하나 만들고
+            var list = new List<int>();
+            // 1부터 n까지 반복
+            for (int i = 1; i <= n; i++)
+            {
+                // n이 인덱스 값으로 나누어떨어지면 
+                if (n % i == 0)
+                {
+                    // 그게 약수니까 list에 넣는다
+                    list.Add(i);
+                }
+            }
+            // list를 배열형으로 바꿔서 리턴한다
+            return list.ToArray();
+        }
+
         // 9로 나눈 나머지
         public int Solution0909(string number)
         {
