@@ -9,10 +9,10 @@ internal class Program
     private static void Main(string[] args)
     {
         int[] num_list = new int[]{5, 1, 4};
-        int[] inv2 = new int[]{11,7};
+        int[] inv2 = new int[]{1,1,1,1,0};
         var strl = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         Programmers pg = new Programmers();
-        int answer = pg.Solution09112("40000 * 40000");
+        int answer = pg.Solution09122(inv2, 3);
         //Utils.PrintIntArray(answer);
         Console.WriteLine(answer);
         //CSharpStudy cs = new CSharpStudy();

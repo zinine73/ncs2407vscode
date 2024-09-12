@@ -8,6 +8,34 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 가까운 1찾기
+        public int Solution09122(int[] arr, int idx)
+        {
+            int answer = -1;
+            for (int i = idx; i < arr.Length; i++)
+            {
+                if (arr[i] == 1)
+                {
+                    answer = i;
+                    break;
+                }
+            }
+            return answer;
+        }
+
+        // 369게임
+        public int Solution0912(int order)
+        {
+            int answer = 0;
+            string str = order.ToString();
+            foreach (var item in str)
+            {
+                if ((item == '3') || (item == '6') || (item == '9'))
+                    answer++;
+            }
+            return answer;
+        }
+
         // 간단한 식 계산하기
         public int Solution09112(string str)
         {
