@@ -8,6 +8,20 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 외계행성의 나이
+        public string Solution0913(int age)
+        {
+            string answer = "";
+            while (age > 0)
+            {
+                int val = age % 10;
+                char chr = Convert.ToChar(val + 'a');
+                answer = chr + answer;
+                age = age / 10;
+            }
+            return answer;
+        }
+
         // 가까운 1찾기
         public int Solution09122(int[] arr, int idx)
         {

@@ -12,7 +12,7 @@ internal class Program
         int[] inv2 = new int[]{1,1,1,1,0};
         var strl = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
         Programmers pg = new Programmers();
-        int answer = pg.Solution09122(inv2, 3);
+        string answer = pg.Solution0913(23);
         //Utils.PrintIntArray(answer);
         Console.WriteLine(answer);
         //CSharpStudy cs = new CSharpStudy();
