@@ -3,11 +3,63 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Formats.Asn1;
 using System.Numerics;
+using System.Reflection.Metadata;
 
 namespace Zinine
 {
     public class Programmers
     {
+        // 할 일 목록
+        public string[] Solution09202(string[] todo_list, bool[] finished)
+        {
+            // answer 배열의 크기를 구한다
+            int len = 0;
+            foreach (var item in finished)
+            {
+                if (item == false) len++;
+            }
+            // 구한 크기만큼의 answer를 생성한다
+            string[] answer = new string[len];
+            // answer에 저장할 때 지정할 인덱스 변수(ai)를 하나 만든다
+            int ai = 0;
+            // for문을 돌면서
+            for (int i = 0; i < todo_list.Length; i++)
+            {
+                // i인덱스의 finished 가 false
+                if (finished[i] == false)
+                {
+                    // answer[ai]에 todo_list[i] 추가 
+                    answer[ai] = todo_list[i];
+                    // 인덱스(ai) + 1
+                    ai++;
+                }
+            }
+            return answer;
+        }
+
+        // 인덱스 바꾸기
+        public string Solution0920(string my_string, int num1, int num2)
+        {
+            string answer = "";
+            // num1, num2에 해당하는 char를 얻어온다
+            char chr1 = my_string[num2];
+            char chr2 = my_string[num1];
+            // for로 돌면서
+            for (int i = 0; i < my_string.Length; i++)
+            {
+                // num1과 같으면
+                if (i == num1)
+                    answer += chr1;
+                // num2와 같으면
+                else if (i == num2)
+                    answer += chr2;
+                // 아니면
+                else
+                    answer += my_string[i];
+            }
+            return answer;
+        }
+
         // 외계행성의 나이
         public string Solution0913(int age)
         {

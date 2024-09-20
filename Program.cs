@@ -10,9 +10,10 @@ internal class Program
     {
         int[] num_list = new int[]{5, 1, 4};
         int[] inv2 = new int[]{1,1,1,1,0};
-        var strl = new string[]{"nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"};
+        var strl = new string[]{"problemsolving", "practiceguitar", "swim", "studygraph"};
+        var str2 = new bool[]{true,false,true,false};
         Programmers pg = new Programmers();
-        string answer = pg.Solution0913(23);
+        string[] answer = pg.Solution09202(strl, str2);
         //Utils.PrintIntArray(answer);
         Console.WriteLine(answer);
         //CSharpStudy cs = new CSharpStudy();
