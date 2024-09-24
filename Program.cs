@@ -9,11 +9,11 @@ internal class Program
     private static void Main(string[] args)
     {
         int[] num_list = new int[]{5, 1, 4};
-        int[] inv2 = new int[]{1,1,1,1,0};
+        int[,] inv2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
         var strl = new string[]{"problemsolving", "practiceguitar", "swim", "studygraph"};
         var str2 = new bool[]{true,false,true,false};
         Programmers pg = new Programmers();
-        string[] answer = pg.Solution09202(strl, str2);
+        int answer = pg.Solution0924(inv2, 2);
         //Utils.PrintIntArray(answer);
         Console.WriteLine(answer);
         //CSharpStudy cs = new CSharpStudy();

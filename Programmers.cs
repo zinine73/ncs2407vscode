@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Formats.Asn1;
+using System.Globalization;
 using System.Numerics;
 using System.Reflection.Metadata;
 
@@ -9,6 +10,27 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 이차원 배열 대각선 순회하기
+        public int Solution0924(int[,] board, int k)
+        {
+            int answer = 0;
+            // i의 크기만큼 반복
+            for (int i = 0; i < board.GetLength(0); i++)
+            {
+                // j의 크기만큼 반복
+                for (int j = 0; j < board.GetLength(1); j++)
+                {
+                    // i+j <= k 조건 검사
+                    if (i+j <= k)
+                    {
+                        // 만족하면 총합에 추가
+                        answer += board[i,j];
+                    }
+                }
+            }
+            return answer;
+        }
+
         // 할 일 목록
         public string[] Solution09202(string[] todo_list, bool[] finished)
         {
