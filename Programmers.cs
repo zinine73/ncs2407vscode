@@ -10,6 +10,19 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 피자 나눠 먹기 (2)
+        public int Solution0925(int n)
+        {
+            int answer = 0;
+            // 반복
+            do
+            {
+                // 피자 판 수 + 1
+                answer++;
+            } while (answer*6 % n != 0); // (총 피자조각 갯수 / 사람수 가 0)만족할때까지
+            return answer;
+        }
+
         // 이차원 배열 대각선 순회하기
         public int Solution0924(int[,] board, int k)
         {
