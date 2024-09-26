@@ -10,6 +10,23 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 중복된 문자 제거
+        public string Solution0926(string my_string)
+        {
+            string answer = "";
+            // 스트링을 foreach로 반복
+            foreach (var item in my_string)
+            {
+                // answer에 item이 없으면
+                if (!answer.Contains(item))
+                {
+                    // answer에 item 추가
+                    answer += item;
+                }
+            }
+            return answer;
+        }
+
         // 피자 나눠 먹기 (2)
         public int Solution0925(int n)
         {

@@ -13,7 +13,7 @@ internal class Program
         var strl = new string[]{"problemsolving", "practiceguitar", "swim", "studygraph"};
         var str2 = new bool[]{true,false,true,false};
         Programmers pg = new Programmers();
-        int answer = pg.Solution0925(4);
+        string answer = pg.Solution0926("We are the world");
         //Utils.PrintIntArray(answer);
         Console.WriteLine(answer);
         //CSharpStudy cs = new CSharpStudy();
