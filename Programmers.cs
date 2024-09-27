@@ -10,6 +10,20 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 진료순서 정하기
+        public int[] Solution0927(int[] emergency)
+        {
+            int[] answer = new int[emergency.Length];
+            var list = new List<int>(emergency);
+            list.Sort();
+            list.Reverse();
+            for (int i = 0; i < answer.Length; i++)
+            {
+                answer[i] = list.IndexOf(emergency[i]) + 1;
+            }
+            return answer;
+        }
+
         // 중복된 문자 제거
         public string Solution0926(string my_string)
         {
