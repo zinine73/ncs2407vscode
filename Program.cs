@@ -13,11 +13,8 @@ internal class Program
         var strl = new string[]{"problemsolving", "practiceguitar", "swim", "studygraph"};
         var str2 = new bool[]{true,false,true,false};
         Programmers pg = new Programmers();
-        int[] answer = pg.Solution0927(num_list);
-        Utils.PrintIntArray(answer);
-        //Console.WriteLine(answer);
-        //CSharpStudy cs = new CSharpStudy();
-        //CSharpEvent cse = new CSharpEvent();
-        //cse.EventSample();
+        int answer = pg.Solution09302("aAb1B2cC34oOp");
+        //Utils.PrintIntArray(answer);
+        Console.WriteLine(answer);
     }
 }

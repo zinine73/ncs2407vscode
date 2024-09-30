@@ -10,6 +10,64 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 숨어있는 숫자의 덧셈 (2)
+        public int Solution09302(string my_string)
+        {
+            int answer = 0;
+            bool isNumber = false; // 연속으로 숫자인지 아닌지
+            int val = 0; // 한개 혹은 연속된 숫자 값
+            // my_string 을 char 하나씩 돌면서
+            foreach (var item in my_string)
+            {
+                // 지금 얻어온 char가 숫자냐
+                if ((item >= '0')&&(item <= '9'))
+                {
+                    // 연속으로 숫자면
+                    if (isNumber == true)
+                    {
+                        // val 값에 10 곱하고 계산
+                        val = val * 10 + (item - '0');
+                    }
+                    else // 아니면
+                    {
+                        // val에 값 더해줌
+                        val += (item - '0');
+                        // 연속숫자 여부 켜기
+                        isNumber = true;
+                    }
+                } 
+                else // 아니면
+                {
+                    // 연속숫자 여부 끄기
+                    isNumber = false;
+                    // answer에 val 더하기
+                    answer += val;
+                    // val 을 0 으로
+                    val = 0;
+                }
+            }
+            // answer에 val 더하기
+            answer += val;
+            return answer;
+        }
+
+        // 숨어있는 숫자의 덧셈 (1)
+        public int Solution0930(string my_string)
+        {
+            int answer = 0;
+            // my_string은 char 배열이므로, 하나씩 돌자
+            foreach (var item in my_string)
+            {
+                // 얻어온 char가 '0'과 '9' 사이에 있다면
+                if ((item >= '0') && (item <= '9'))
+                {
+                    // answer에 그 값을 더한다
+                    answer += (item - '0');
+                }
+            }
+            return answer;
+        }
+
         // 진료순서 정하기
         public int[] Solution0927(int[] emergency)
         {
