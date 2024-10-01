@@ -5,11 +5,46 @@ using System.Formats.Asn1;
 using System.Globalization;
 using System.Numerics;
 using System.Reflection.Metadata;
+using Microsoft.VisualBasic;
 
 namespace Zinine
 {
     public class Programmers
     {
+        // 한 번만 등장한 문자
+        public string Solution1001(string s)
+        {
+            // Replace를 이용한 방법
+            /*
+            var answer = new List<char>();
+            var list = new List<char>(s);
+            foreach (var item in list)
+            {
+                string str = s;
+                if (str.Replace(item.ToString(), "").Length == s.Length - 1)
+                {
+                    answer.Add(item);
+                }
+            }
+            answer.Sort();
+            return new string(answer.ToArray());
+            */
+            // Split을 이용한 방법
+            string answer = "";
+            // 'a'부터 'z'까지 돌면서
+            for (char c = 'a'; c <= 'z'; c++)
+            {
+                // s를 지금 캐릭터로 Split해서 나온 결과의 길이가 2이면
+                // 지금 캐릭터가 한번 나왔다는 뜻이므로 answer에 add
+                if (s.Split(c).Length == 2)
+                {
+                    answer += c;
+                }
+            }
+            // for문을 오름차순으로 돌았기 때문에 Sort가 필요없다
+            return answer;
+        }
+
         // 숨어있는 숫자의 덧셈 (2)
         public int Solution09302(string my_string)
         {
