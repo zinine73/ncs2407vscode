@@ -5,12 +5,59 @@ using System.Formats.Asn1;
 using System.Globalization;
 using System.Numerics;
 using System.Reflection.Metadata;
+using System.Text;
 using Microsoft.VisualBasic;
 
 namespace Zinine
 {
     public class Programmers
     {
+        // 7의 개수
+        public int Solution10042(int[] array)
+        {
+            int answer = 0;
+            // 배열의 모든 요소를 하나의 문자열로 만든다
+            var sb = new StringBuilder();
+            foreach (var item in array)
+            {
+                sb.Append(item);
+            }
+            string str = sb.ToString();
+            // 배열의 요소를 하나씩 검사해서 7과 비교한다
+            foreach (var item in str)
+            {
+                if (item == '7')
+                {
+                    answer++;
+                }
+            }
+            return answer;
+        }
+
+        // 잘라서 배열로 저장하기
+        public string[] Solution1004(string my_str, int n)
+        {
+            // 리턴할 배열의 크기를 먼저 구하자
+            int len = my_str.Length / n;
+            // 나머지가 있는 경우 배열 크기는 +1
+            if (my_str.Length % n > 0) len++;
+            // 구해진 크기만큼 리턴할 배열을 잡는다
+            string[] answer = new string[len];
+            int idx = 0;
+            int cnt = 0;
+            foreach (var item in my_str)
+            {
+                answer[idx] += item;
+                cnt++;
+                if (cnt == n)
+                {
+                    idx++;
+                    cnt = 0;
+                }
+            }
+            return answer;
+        }
+
         // 한 번만 등장한 문자
         public string Solution1001(string s)
         {
