@@ -12,6 +12,17 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 커피 심부름
+        public int Solution1007(string[] order)
+        {
+            int answer = 0;
+            foreach (var item in order)
+            {
+                answer += item.Contains("cafelatte") ? 5000 : 4500;
+            }
+            return answer;
+        }
+
         // 7의 개수
         public int Solution10042(int[] array)
         {
