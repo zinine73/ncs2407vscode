@@ -5,6 +5,7 @@ using System.Formats.Asn1;
 using System.Globalization;
 using System.Numerics;
 using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Microsoft.VisualBasic;
 
@@ -12,6 +13,75 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 두 수의 합
+        public string Solution10082(string a, string b)
+        {
+            // string의 계산에는 StringBuilder를 사용한다
+            var sb = new StringBuilder();
+            // 두 수 중에 더 긴 수를 찾고 그 길이를 구한다
+            int len = Math.Max(a.Length, b.Length);
+            // 10이 넘어가는 경우 다음 계산에 더해줄 변수
+            int over = 0;
+            
+            for (int i = 0; i < len; i++)
+            {
+                int va = 0;
+                if (a.Length > i)
+                {
+                    va = a[a.Length - i - 1] - '0';
+                }
+                int vb = 0;
+                if (b.Length > i)
+                {
+                    vb = b[b.Length - i - 1] - '0';
+                }
+                int vc = va + vb + over;
+                if (vc >= 10)
+                {
+                    over = 1;
+                    vc = vc - 10;
+                }
+                else
+                {
+                    over = 0;
+                }
+                sb.Insert(0, vc);
+            }
+            if (over > 0)
+            {
+                sb.Insert(0, 1);
+            }
+            return sb.ToString();
+        }
+
+        // 문자열 계산하기
+        public int Solution1008(string my_string)
+        {
+            int answer = 0;
+            // 숫자와 수식으로 분리하기
+            string[] str = my_string.Split(' ');
+            int pm = 1;
+            // 분리된 문자열을 각각 돌면서
+            foreach (var item in str)
+            {
+                int temp = 0;
+                if (item.CompareTo("+") == 0)
+                {
+                    pm = 1;
+                }
+                else if (item.CompareTo("-") == 0)
+                {
+                    pm = -1;
+                }
+                else
+                {
+                    temp = Convert.ToInt32(item);
+                }
+                answer += temp * pm;
+            }
+            return answer;
+        }
+
         // 커피 심부름
         public int Solution1007(string[] order)
         {

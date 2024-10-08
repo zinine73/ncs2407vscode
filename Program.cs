@@ -13,7 +13,7 @@ internal class Program
         var str1 = new string[]{"americanoice", "americano", "iceamericano"};
         var str2 = new bool[]{true,false,true,false};
         Programmers pg = new Programmers();
-        int answer = pg.Solution1007(str1);
+        string answer = pg.Solution10082("0","0");
         //Utils.PrintIntArray(answer);
         Console.WriteLine(answer);
     }
