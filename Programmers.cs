@@ -13,6 +13,40 @@ namespace Zinine
 {
     public class Programmers
     {
+        // 캐릭터의 좌표
+        public int[] Solution1010(string[] keyinput, int[] board)
+        {
+            int[] answer = new int[2];
+            int x = 0;
+            int y = 0;
+            int bxr = (board[0] - 1) / 2;
+            int bxl = -1 * bxr;
+            int byu = (board[1] - 1) / 2;
+            int byd = -1 * byu;
+            foreach (var item in keyinput)
+            {
+                if (item.CompareTo("left") == 0)
+                {
+                    if (x > bxl) x -= 1;
+                }
+                else if (item.CompareTo("right") == 0)
+                {
+                    if (x < bxr) x += 1;
+                }
+                else if (item.CompareTo("down") == 0)
+                {
+                    if (y > byd) y -= 1;
+                }
+                else
+                {
+                    if (y < byu) y += 1;
+                }
+            }
+            answer[0] = x;
+            answer[1] = y;
+            return answer;
+        }
+
         // 두 수의 합
         public string Solution10082(string a, string b)
         {

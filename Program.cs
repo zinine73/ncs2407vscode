@@ -8,13 +8,13 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int[] num_list = new int[]{10,29};
+        int[] num_list = new int[]{7,9};
         int[,] inv2 = new int[,]{{0,1,2},{1,2,3},{2,3,4},{3,4,5}};
-        var str1 = new string[]{"americanoice", "americano", "iceamericano"};
+        var str1 = new string[]{"down", "down", "down", "down", "down"};
         var str2 = new bool[]{true,false,true,false};
         Programmers pg = new Programmers();
-        string answer = pg.Solution10082("0","0");
-        //Utils.PrintIntArray(answer);
-        Console.WriteLine(answer);
+        int[] answer = pg.Solution1010(str1,num_list);
+        Utils.PrintIntArray(answer);
+        //Console.WriteLine(answer);
     }
 }
